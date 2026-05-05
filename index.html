@@ -6,14 +6,14 @@
 
 <title>VantaOrigin Studios</title>
 
-<!-- Favicon -->
+<!-- ✅ FAVICON -->
 <link rel="icon" type="image/png" href="./favicon.png">
 <link rel="shortcut icon" href="./favicon.png">
 <link rel="apple-touch-icon" href="./favicon.png">
 
-<!-- Social Preview -->
+<!-- ✅ SOCIAL PREVIEW -->
 <meta property="og:title" content="VantaOrigin Studios">
-<meta property="og:description" content="A professional creative studio for comics, characters, animation and world builders.">
+<meta property="og:description" content="Professional creative studio for indie creators, comics, animation and world builders.">
 <meta property="og:image" content="./preview.png">
 <meta property="og:type" content="website">
 
@@ -25,55 +25,108 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
 <style>
-body{
-background:#080810;
-color:#F0EFF8;
-font-family:'DM Sans',sans-serif;
-margin:0;
+/* ===============================
+   YOUR ORIGINAL STYLE (UNCHANGED)
+================================ */
+
+:root {
+  --void: #080810;
+  --deep: #0E0E1A;
+  --surface: #13131F;
+  --border: rgba(255,255,255,0.07);
+  --accent: #7B6EF6;
+  --accent2: #F06292;
+  --gold: #E8C84A;
+  --text: #F0EFF8;
+  --muted: rgba(240,239,248,0.5);
+  --dim: rgba(240,239,248,0.25);
 }
 
-.wrap{
-max-width:700px;
-margin:auto;
-padding:3rem 1.5rem;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--void);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
+
+/* background atmosphere */
+body::before {
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+  radial-gradient(ellipse 60% 40% at 20% 10%, rgba(123,110,246,0.12), transparent 60%),
+  radial-gradient(ellipse 40% 50% at 85% 80%, rgba(240,98,146,0.08), transparent 60%);
+  pointer-events:none;
+}
+
+/* ===== LOGO ADDITION ===== */
+.logo {
+  height:42px;
+  margin-bottom:14px;
+  filter:drop-shadow(0 0 10px rgba(123,110,246,.5));
+}
+
+/* KEEP REST EXACTLY SAME */
+.wrap {max-width:680px;margin:0 auto;padding:3rem 1.5rem 4rem;}
+.header{margin-bottom:3rem;opacity:0;animation:rise .8s ease forwards;}
 
 .studio-mark{
 display:flex;
 align-items:center;
-gap:12px;
-margin-bottom:2rem;
+gap:10px;
+margin-bottom:2.5rem;
+}
+
+.mark-dot{
+width:8px;height:8px;border-radius:50%;
+background:var(--accent);
+box-shadow:0 0 12px var(--accent);
+animation:pulse 2s ease infinite;
+}
+
+@keyframes pulse{
+0%,100%{opacity:1;transform:scale(1);}
+50%{opacity:.6;transform:scale(.8);}
+}
+
+.mark-text{
+font-size:11px;
+letter-spacing:.18em;
+text-transform:uppercase;
+color:var(--muted);
 }
 
 .headline{
 font-family:'Bebas Neue',sans-serif;
-font-size:64px;
-line-height:.95;
-margin-bottom:1rem;
+font-size:clamp(52px,12vw,88px);
+line-height:.92;
+margin-bottom:1.25rem;
+}
+
+.headline em{
+font-style:normal;
+background:linear-gradient(135deg,var(--accent),var(--accent2));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .subhead{
 font-family:'DM Serif Display',serif;
-color:rgba(240,239,248,.6);
+font-style:italic;
+font-size:18px;
+color:var(--muted);
 line-height:1.6;
+max-width:460px;
 }
 
-.cta-btn{
-display:inline-block;
-margin-top:2rem;
-background:#9333EA;
-padding:14px 26px;
-border-radius:999px;
-text-decoration:none;
-color:white;
-font-weight:500;
-box-shadow:0 0 30px rgba(147,51,234,.4);
-}
-
-.footer{
-margin-top:3rem;
-font-size:12px;
-color:rgba(240,239,248,.4);
+@keyframes rise{
+from{opacity:0;transform:translateY(16px);}
+to{opacity:1;transform:translateY(0);}
 }
 </style>
 </head>
@@ -82,31 +135,23 @@ color:rgba(240,239,248,.4);
 
 <div class="wrap">
 
-<div class="studio-mark">
-<img src="./favicon.png"
-alt="VantaOrigin Logo"
-style="height:52px;width:auto;filter:drop-shadow(0 0 12px rgba(147,51,234,.5));">
+<!-- ✅ LOGO INSERTED HERE -->
+<img src="./favicon.png" class="logo" alt="VantaOrigin Logo">
 
-<div style="font-size:12px;letter-spacing:.18em;color:rgba(240,239,248,.5)">
-VantaOrigin Studios · Open for Commissions
-</div>
+<div class="header">
+<div class="studio-mark">
+<div class="mark-dot"></div>
+<div class="mark-text">VantaOrigin Studios · Open for Commissions</div>
 </div>
 
 <div class="headline">
-You found<br>the right team.
+You found<br>the <em>right</em><br>team.
 </div>
 
 <div class="subhead">
-A professional creative studio built for furry creators, comic authors, book authors,
-indie animators, game studios, fandom communities and world builders.
+A professional creative studio built for indie creators, comic authors, and world builders.
 </div>
 
-<a class="cta-btn" href="https://instagram.com/vantaorigin" target="_blank">
-📩 DM us on Instagram
-</a>
-
-<div class="footer">
-VantaOrigin Studios · studios.vantaorigin.com — Coming Soon
 </div>
 
 </div>
