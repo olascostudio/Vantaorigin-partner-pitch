@@ -1,194 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>VantaOrigin Studios | Creative Design & Animation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ✅ FAVICON -->
-  <link rel="icon" type="image/png" href="./favicon.png">
-  <link rel="shortcut icon" href="./favicon.png">
-  <link rel="apple-touch-icon" href="./favicon.png">
+<title>VantaOrigin Studios</title>
 
-  <!-- ✅ SOCIAL SHARE (Open Graph) -->
-  <meta property="og:title" content="VantaOrigin Studios">
-  <meta property="og:description" content="Professional creative studio for indie creators, 3D design, animation and world builders.">
-  <meta property="og:image" content="./preview.png">
-  <meta property="og:url" content="https://vantaorigin.com">
-  <meta property="og:type" content="website">
+<!-- ✅ FAVICON & BRANDING -->
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="shortcut icon" href="./favicon.png">
+<link rel="apple-touch-icon" href="./favicon.png">
 
-  <!-- ✅ TWITTER PREVIEW -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="VantaOrigin Studios">
-  <meta name="twitter:description" content="Professional creative studio for indie creators.">
-  <meta name="twitter:image" content="./preview.png">
+<!-- ✅ SOCIAL SHARE PREVIEWS -->
+<meta property="og:title" content="VantaOrigin Studios">
+<meta property="og:description" content="Professional creative studio for indie creators, comics, animation and world builders.">
+<meta property="og:image" content="./preview.png">
+<meta property="og:url" content="https://vantaorigin.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="./preview.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --void: #080810;
-      --deep: #0E0E1A;
-      --surface: #13131F;
-      --border: rgba(255,255,255,0.07);
-      --accent: #9333EA;
-      --accent2: #EB1C8D;
-      --gold: #E8C84A;
-      --text: #F0EFF8;
-      --muted: rgba(240,239,248,0.5);
-      --dim: rgba(240,239,248,0.25);
-    }
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<style>
+  :root {
+    --void: #080810;
+    --deep: #0E0E1A;
+    --surface: #13131F;
+    --border: rgba(255,255,255,0.07);
+    --accent: #9333EA;
+    --accent2: #EB1C8D;
+    --gold: #E8C84A;
+    --text: #F0EFF8;
+    --muted: rgba(240,239,248,0.5);
+    --dim: rgba(240,239,248,0.25);
+  }
 
-    body {
-      background: var(--void);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 60% 40% at 20% 10%, rgba(147,51,234,0.15) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 50% at 85% 80%, rgba(235,28,141,0.1) 0%, transparent 60%),
-        radial-gradient(ellipse 30% 30% at 50% 50%, rgba(232,200,74,0.04) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
+  body {
+    background: var(--void);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
 
-    .wrap {
-      position: relative;
-      z-index: 1;
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 4rem;
-    }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 20% 10%, rgba(147,51,234,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 50% at 85% 80%, rgba(235,28,141,0.1) 0%, transparent 60%),
+      radial-gradient(ellipse 30% 30% at 50% 50%, rgba(232,200,74,0.04) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
 
-    .header {
-      margin-bottom: 3rem;
-      opacity: 0;
-      animation: rise 0.8s ease forwards;
-    }
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
 
-    .studio-mark {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 15px;
-      margin-bottom: 2.5rem;
-    }
+  .header {
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: rise 0.8s ease forwards;
+  }
 
-    .main-logo {
-      height: 65px;
-      width: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 0 12px rgba(147, 51, 234, 0.4));
-    }
+  .studio-mark {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 2.5rem;
+  }
 
-    .mark-status {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+  /* ✅ CUSTOM LOGO STYLE */
+  .main-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(147,51,234,0.4));
+  }
 
-    .mark-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 12px var(--accent);
-      animation: pulse 2s ease infinite;
-    }
+  .mark-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+    animation: pulse 2s ease infinite;
+  }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(0.8); }
-    }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.8); }
+  }
 
-    .mark-text {
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
+  .mark-text {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
 
-    .headline {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(52px, 12vw, 88px);
-      line-height: 0.92;
-      letter-spacing: 0.02em;
-      margin-bottom: 1.25rem;
-    }
+  .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 12vw, 88px);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.25rem;
+  }
 
-    .headline em {
-      font-style: normal;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+  .headline em {
+    font-style: normal;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
-    .subhead {
-      font-family: 'DM Serif Display', serif;
-      font-style: italic;
-      font-size: 18px;
-      color: var(--muted);
-      line-height: 1.6;
-      max-width: 460px;
-    }
+  .subhead {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 460px;
+  }
 
-    .rule { height: 0.5px; background: var(--border); margin: 2rem 0; opacity: 0; animation: rise 0.8s ease 0.2s forwards; }
-    
-    .section-eye { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); margin-bottom: 1rem; }
+  .rule {
+    height: 0.5px;
+    background: var(--border);
+    margin: 2rem 0;
+    opacity: 0;
+    animation: rise 0.8s ease 0.2s forwards;
+  }
 
-    .services { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 2.5rem; opacity: 0; animation: rise 0.8s ease 0.4s forwards; }
-    .service { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; transition: border-color 0.2s, transform 0.2s; cursor: default; }
-    .service:hover { border-color: rgba(147,51,234,0.3); transform: translateY(-2px); }
-    .service-icon { font-size: 18px; margin-bottom: 8px; }
-    .service-name { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
-    .service-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
-    
-    .team-section { margin-bottom: 2.5rem; opacity: 0; animation: rise 0.8s ease 0.5s forwards; }
-    .team-intro { font-size: 14px; color: rgba(240,239,248,0.7); line-height: 1.75; margin-bottom: 1.25rem; }
-    .team-grid { display: flex; flex-wrap: wrap; gap: 8px; }
-    .member { background: var(--surface); border: 0.5px solid var(--border); border-radius: 999px; padding: 5px 14px; font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
-    .member-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-    .member span { color: var(--text); font-weight: 500; }
+  .intro {
+    font-size: 15px;
+    line-height: 1.85;
+    color: rgba(240,239,248,0.75);
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: rise 0.8s ease 0.3s forwards;
+  }
 
-    .why-section { background: var(--surface); border: 0.5px solid var(--border); border-radius: 16px; padding: 1.5rem; margin-bottom: 2.5rem; opacity: 0; animation: rise 0.8s ease 0.6s forwards; }
-    .why-title { font-family: 'DM Serif Display', serif; font-size: 20px; margin-bottom: 1rem; color: var(--text); }
-    .why-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .why-list li { font-size: 13px; color: rgba(240,239,248,0.7); line-height: 1.65; padding-left: 16px; position: relative; }
-    .why-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 4px; height: 4px; border-radius: 50%; background: var(--accent2); }
-    .why-list li strong { color: var(--text); font-weight: 500; }
+  .intro strong {
+    color: var(--text);
+    font-weight: 500;
+  }
 
-    .cta-section { text-align: center; opacity: 0; animation: rise 0.8s ease 0.7s forwards; }
-    .cta-label { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 22px; color: var(--muted); margin-bottom: 0.5rem; }
-    .cta-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 8vw, 52px); letter-spacing: 0.04em; line-height: 1; margin-bottom: 1.5rem; background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .cta-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: white; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; padding: 14px 28px; border-radius: 999px; text-decoration: none; letter-spacing: 0.02em; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 0 30px rgba(147,51,234,0.3); }
-    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 0 40px rgba(147,51,234,0.5); }
-    .cta-sub { margin-top: 1rem; font-size: 12px; color: var(--dim); }
+  .section-eye {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 1rem;
+  }
 
-    .footer-note { margin-top: 3rem; padding-top: 1.5rem; border-top: 0.5px solid var(--border); text-align: center; font-size: 11px; color: var(--dim); letter-spacing: 0.05em; opacity: 0; animation: rise 0.8s ease 0.9s forwards; }
-    .footer-note strong { color: var(--muted); }
+  .services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: rise 0.8s ease 0.4s forwards;
+  }
 
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  .service {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: default;
+  }
 
-    @media (max-width: 480px) {
-      .services { grid-template-columns: 1fr; }
-      .wrap { padding: 2rem 1.25rem 3rem; }
-    }
-  </style>
+  .service:hover {
+    border-color: rgba(147,51,234,0.3);
+    transform: translateY(-2px);
+  }
+
+  .service-icon {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .service-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .service-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .team-section {
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: rise 0.8s ease 0.5s forwards;
+  }
+
+  .team-intro {
+    font-size: 14px;
+    color: rgba(240,239,248,0.7);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .member {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .member-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .member span {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .why-section {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: rise 0.8s ease 0.6s forwards;
+  }
+
+  .why-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .why-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .why-list li {
+    font-size: 13px;
+    color: rgba(240,239,248,0.7);
+    line-height: 1.65;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .why-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent2);
+  }
+
+  .why-list li strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .cta-section {
+    text-align: center;
+    opacity: 0;
+    animation: rise 0.8s ease 0.7s forwards;
+  }
+
+  .cta-label {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(32px, 8vw, 52px);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 30px rgba(147,51,234,0.3);
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px rgba(147,51,234,0.5);
+  }
+
+  .cta-sub {
+    margin-top: 1rem;
+    font-size: 12px;
+    color: var(--dim);
+  }
+
+  .footer-note {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 0.5px solid var(--border);
+    text-align: center;
+    font-size: 11px;
+    color: var(--dim);
+    letter-spacing: 0.05em;
+    opacity: 0;
+    animation: rise 0.8s ease 0.9s forwards;
+  }
+
+  .footer-note strong {
+    color: var(--muted);
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 480px) {
+    .services { grid-template-columns: 1fr; }
+    .wrap { padding: 2rem 1.25rem 3rem; }
+  }
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -196,84 +385,95 @@
   <div class="header">
     <div class="studio-mark">
       <img src="./logo.png" class="main-logo" alt="VantaOrigin Logo">
-      <div class="mark-status">
+      <div style="display:flex; align-items:center; gap:10px;">
         <div class="mark-dot"></div>
-        <div class="mark-text">VantaOrigin Studios · Open for Commissions</div>
+        <div class="mark-text">VantaOrigin Studios · Open for Commissions[cite: 1]</div>
       </div>
     </div>
     <div class="headline">
-      You found<br>the <em>right</em><br>team.
+      You found<br>the <em>right</em><br>team.[cite: 1]
     </div>
-    <div class="subhead">Professional creative services for indie creators, authors, and world builders.[cite: 1]</div>
+    <div class="subhead">A professional creative studio built for furry creators, comic authors, book authors, indie animators, game studios, fandom communities, content creators and world builders.[cite: 1]</div>
   </div>
 
   <div class="rule"></div>
 
+  <p class="intro">
+    We know what it's like to have a vision nobody else can quite execute. <strong>VantaOrigin Studios</strong> is a team of artists, writers, animators, colorists, and designers who specialize in bringing indie creative projects to life, from a single character sheet to a full comic run. We're not a freelancer marketplace. <strong>We're a team that works with you.[cite: 1]</strong>
+  </p>
+
   <div class="section-eye">What we do</div>
   <div class="services">
+    <!-- ✅ ADDED 3D DESIGN & PRINTING -->
     <div class="service">
       <div class="service-icon">🏗️</div>
       <div class="service-name">3D Design & Printing</div>
       <div class="service-desc">Custom 3D character models and precision printing for creators.</div>
     </div>
     <div class="service">
-      <div class="service-icon">🎬</div>
-      <div class="service-name">2D & 3D Animation</div>
-      <div class="service-desc">Dynamic animated shorts, intros, and full character motion.[cite: 1]</div>
-    </div>
-    <div class="service">
       <div class="service-icon">🎨</div>
-      <div class="service-name">Character Art</div>
-      <div class="service-desc">Original designs, detailed reference sheets, and digital cards.[cite: 1]</div>
+      <div class="service-name">Character Design</div>
+      <div class="service-desc">Original characters, sheets, expressions, and digital cards built to your lore.[cite: 1]</div>
     </div>
     <div class="service">
       <div class="service-icon">📖</div>
       <div class="service-name">Comics & Panels</div>
-      <div class="service-desc">Complete comic production from lineart to final lettering.[cite: 1]</div>
+      <div class="service-desc">Full comic production, lineart, inking, coloring, lettering, layout.[cite: 1]</div>
     </div>
     <div class="service">
       <div class="service-icon">📕</div>
       <div class="service-name">Book Covers</div>
-      <div class="service-desc">Professional cover art designed to captivate readers.[cite: 1]</div>
+      <div class="service-desc">Cover art that makes readers stop scrolling and actually look twice.[cite: 1]</div>
     </div>
     <div class="service">
-      <div class="service-icon">🏷️</div>
-      <div class="service-name">Brand & Identity</div>
-      <div class="service-desc">Logos and creator identity systems for your personal brand.[cite: 1]</div>
+      <div class="service-icon">✍️</div>
+      <div class="service-name">Scripts & Lore</div>
+      <div class="service-desc">Story writing, world building, scripts for comics and indie animation.[cite: 1]</div>
+    </div>
+    <!-- ✅ EXPANDED ANIMATION -->
+    <div class="service">
+      <div class="service-icon">🎬</div>
+      <div class="service-name">2D & 3D Animation</div>
+      <div class="service-desc">Animated shorts, intros, and full character motion for your brand.[cite: 1]</div>
     </div>
   </div>
 
   <div class="team-section">
     <div class="section-eye">The team</div>
-    <p class="team-intro">A multidisciplinary crew of artists, animators, and designers dedicated to bringing visions to life.[cite: 1]</p>
+    <p class="team-intro">Eight creatives across multiple disciplines and continents. Every project gets the right hands on it — not just whoever's available.[cite: 1]</p>
     <div class="team-grid">
-      <div class="member"><div class="member-dot"></div><span>3D Modelers</span></div>
-      <div class="member"><div class="member-dot"></div><span>Animators</span></div>
-      <div class="member"><div class="member-dot"></div><span>Comic Artists</span></div>
-      <div class="member"><div class="member-dot"></div><span>Writers</span></div>
-      <div class="member"><div class="member-dot"></div><span>Brand Designers</span></div>
+      <div class="member"><div class="member-dot"></div><span>Comic Artists</span> & more[cite: 1]</div>
+      <div class="member"><div class="member-dot"></div><span>Colorists</span>[cite: 1]</div>
+      <div class="member"><div class="member-dot"></div><span>Writers</span>[cite: 1]</div>
+      <div class="member"><div class="member-dot"></div><span>Animators</span>[cite: 1]</div>
+      <div class="member"><div class="member-dot"></div><span>Brand Designers</span>[cite: 1]</div>
+      <div class="member"><div class="member-dot"></div><span>Character Artists</span>[cite: 1]</div>
+      <div class="member"><div class="member-dot"></div><span>Diverse Styles</span>[cite: 1]</div>
     </div>
+    <p style="font-size:12px;color:var(--dim);margin-top:1rem;">20+ creatives across diverse styles — realism, anime, cartoon, semi-realistic and more. Whatever your vision demands, we have the hand for it.[cite: 1]</p>
   </div>
 
   <div class="why-section">
-    <div class="why-title">Why choose VantaOrigin</div>
+    <div class="why-title">Why creators choose us</div>
     <ul class="why-list">
-      <li><strong>Contracts and security.</strong> Every project is protected with clear terms.[cite: 1]</li>
-      <li><strong>Full pipeline management.</strong> We handle everything from concept to final render.[cite: 1]</li>
-      <li><strong>Professional quality.</strong> High-end character design and animation at fair industry rates.[cite: 1]</li>
+      <li><strong>We work under contracts.</strong> Every project is protected. No surprises, no ghosting, no scope creep without discussion.[cite: 1]</li>
+      <li><strong>We handle full pipelines.</strong> From script to colored panels, you don't have to coordinate five different freelancers yourself.[cite: 1]</li>
+      <li><strong>We understand your world.</strong> Fandom, OCs, indie comics, animation. This is our language too.[cite: 1]</li>
+      <li><strong>Quality art at fair industry prices.</strong> Get professional character art, comics, and animation without the agency price tag. Great work shouldn't cost a fortune, and with us it won't.[cite: 1]</li>
     </ul>
   </div>
 
   <div class="cta-section">
-    <div class="cta-label">Ready to build something real?</div>
-    <div class="cta-big">Let's work.</div>
+    <div class="cta-label">Ready to build something real?[cite: 1]</div>
+    <div class="cta-big">Let's work.[cite: 1]</div>
     <a class="cta-btn" href="https://instagram.com/vantaorigin" target="_blank">
       📩 DM us on Instagram
     </a>
+    <div class="cta-sub">@vantaorigin · We respond within 24 hours[cite: 1]</div>
   </div>
 
   <div class="footer-note">
-    <strong>VantaOrigin Studios</strong> · <strong>studios.vantaorigin.com</strong>[cite: 1]
+    <strong>VantaOrigin Studios</strong> · Part of the VantaOrigin Creative Ecosystem · <strong>studios.vantaorigin.com</strong> — Coming Soon[cite: 1]
   </div>
 
 </div>
